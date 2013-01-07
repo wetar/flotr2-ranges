@@ -1,4 +1,5 @@
-/** Ranges **/
+/** Ranges
+	This is copied and adopted from flotr2 lines chart type **/
 Flotr.addType('ranges', {
   options: {
     show: false,           // => setting to true will show ranges, false will hide
@@ -122,34 +123,15 @@ Flotr.addType('ranges', {
     context.closePath();
   },
 
-  // Perform any pre-render precalculations (this should be run on data first)
-  // - Pie chart total for calculating measures
-  // - Stacks for lines and bars
-  // precalculate : function () {
-  // }
-  //
-  //
-  // Get any bounds after pre calculation (axis can fetch this if does not have explicit min/max)
-  // getBounds : function () {
-  // }
-  // getMin : function () {
-  // }
-  // getMax : function () {
-  // }
-  //
-  //
-  // Padding around rendered elements
-  // getPadding : function () {
-  // }
 
   extendYRange : function (axis, data, options, lines) {
 
     var o = axis.options;
 
     var
-        newmax = axis.max,
-        newmin = axis.min,
-        x, j;
+      newmax = axis.max,
+      newmin = axis.min,
+      x, j;
 
 	  for (j = 0; j < data.length; j++) {
 		newmax = Math.max(newmax, data[j][2]);
